@@ -1,9 +1,9 @@
 import { Section, H2, Lead, Card, Row, Muted, ButtonLink } from "./_ui";
 
 export default function CTA() {
-  const email = "hello@privatepilateswarsaw.pl";
-  const phone = "+48 600 000 000"; // replace
-  const whatsappLink = "https://wa.me/48600000000"; // replace (no spaces)
+  const email = "bartosznowickihq@gmail.com";
+  const phone = "+48 605 769 837";
+  const whatsappLink = "https://wa.me/48605769837";
 
   return (
     <Section id="contact" tone="soft">

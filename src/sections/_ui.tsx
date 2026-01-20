@@ -1,5 +1,21 @@
 import React from "react";
 
+const colors = {
+  burgundy: "rgba(122, 31, 43, 1)",
+  burgundySoft: "rgba(122,31,43,0.08)",
+  burgundyBorder: "rgba(122,31,43,0.22)",
+  burgundyTextSoft: "rgba(122,31,43,0.85)",
+  burgundyHeader: "rgba(122, 31, 43, 1)",
+  cardBg: "rgba(122,31,43,0.02)",
+  ink: "#111",
+  softBackground: `linear-gradient(
+    180deg,
+    rgba(122,31,43,0.08),
+    rgba(255,255,255,0)
+  )`,
+  cardBgStrong: "rgba(122,31,43,0.055)",
+};
+
 export function Container({ children }: { children: React.ReactNode }) {
   return (
     <div
@@ -28,11 +44,8 @@ export function Section({
       id={id}
       style={{
         padding: "84px 0",
-        background:
-          tone === "soft"
-            ? "linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02))"
-            : "transparent",
-        borderTop: "1px solid rgba(0,0,0,0.06)",
+        background: tone === "soft" ? colors.softBackground : "transparent",
+        borderTop: `1px solid ${colors.burgundyBorder}`,
       }}
     >
       <Container>{children}</Container>
@@ -50,7 +63,14 @@ export function H2({ children }: { children: React.ReactNode }) {
 
 export function Lead({ children }: { children: React.ReactNode }) {
   return (
-    <p style={{ fontSize: 18, lineHeight: 1.7, margin: "0 0 18px", maxWidth: 820 }}>
+    <p
+      style={{
+        fontSize: 18,
+        lineHeight: 1.7,
+        margin: "0 0 18px",
+        maxWidth: 820,
+      }}
+    >
       {children}
     </p>
   );
@@ -91,11 +111,12 @@ export function Card({
     <div
       style={{
         flex: "1 1 260px",
-        border: "1px solid rgba(0,0,0,0.12)",
+        border: `1px solid ${colors.burgundyBorder}`,
         borderRadius: 16,
         padding: 18,
-        background: "rgba(255,255,255,0.6)",
-        boxShadow: "0 10px 30px rgba(0,0,0,0.06)",
+        background: colors.cardBg,
+        backdropFilter: "blur(6px)",
+        boxShadow: "0 12px 32px rgba(0,0,0,0.06)",
       }}
     >
       <div style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 8 }}>
@@ -109,16 +130,18 @@ export function Card({
               alignItems: "center",
               justifyContent: "center",
               borderRadius: 10,
-              border: "1px solid rgba(0,0,0,0.12)",
-              background: "rgba(0,0,0,0.03)",
+              border: `1px solid ${colors.burgundyBorder}`,
+              background: colors.burgundySoft,
+              color: colors.burgundy,
               fontSize: 14,
             }}
           >
             {icon}
           </span>
         ) : null}
-        <div style={{ fontWeight: 700 }}>{title}</div>
+        <div style={{ fontWeight: 700, color: colors.burgundyHeader }}>{title}</div>
       </div>
+
       <div style={{ opacity: 0.9, lineHeight: 1.6 }}>{children}</div>
     </div>
   );
@@ -134,17 +157,20 @@ export function ButtonLink({
   variant?: "primary" | "ghost";
 }) {
   const isPrimary = variant === "primary";
+
   return (
     <a
       href={href}
       style={{
         display: "inline-block",
-        padding: "12px 16px",
+        padding: "12px 18px",
         borderRadius: 12,
         textDecoration: "none",
-        border: isPrimary ? "1px solid rgba(0,0,0,0.9)" : "1px solid rgba(0,0,0,0.18)",
-        background: isPrimary ? "rgba(0,0,0,0.9)" : "transparent",
-        color: isPrimary ? "white" : "rgba(0,0,0,0.9)",
+        border: isPrimary
+          ? `1px solid ${colors.burgundy}`
+          : `1px solid ${colors.burgundyBorder}`,
+        background: isPrimary ? colors.burgundy : "transparent",
+        color: isPrimary ? "white" : colors.burgundy,
         fontWeight: 650,
       }}
     >
@@ -153,21 +179,15 @@ export function ButtonLink({
   );
 }
 
-export function ImageFrame({
-  src,
-  alt,
-}: {
-  src: string;
-  alt: string;
-}) {
+export function ImageFrame({ src, alt }: { src: string; alt: string }) {
   return (
     <div
       style={{
         borderRadius: 18,
         overflow: "hidden",
-        border: "1px solid rgba(0,0,0,0.12)",
+        border: `1px solid ${colors.burgundyBorder}`,
         boxShadow: "0 18px 50px rgba(0,0,0,0.10)",
-        background: "rgba(0,0,0,0.02)",
+        background: colors.burgundySoft,
       }}
     >
       <img
@@ -187,13 +207,14 @@ export function DividerLabel({ text }: { text: string }) {
         display: "inline-flex",
         gap: 8,
         alignItems: "center",
-        padding: "7px 10px",
+        padding: "7px 12px",
         borderRadius: 999,
-        border: "1px solid rgba(0,0,0,0.14)",
-        background: "rgba(255,255,255,0.65)",
+        border: `1px solid ${colors.burgundyBorder}`,
+        background: "rgba(255,255,255,0.8)",
         fontSize: 13,
         fontWeight: 650,
         letterSpacing: 0.2,
+        color: colors.burgundy,
       }}
     >
       {text}

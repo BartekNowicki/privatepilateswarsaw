@@ -1,7 +1,7 @@
 import { ButtonLink, Container, DividerLabel, ImageFrame, Row } from "./_ui";
+import heroImg from "../assets/hero.jpg";
 
 export default function Hero() {
-  const heroImg = "https://picsum.photos/seed/pilates-hero/1400/900";
 
   return (
     <section

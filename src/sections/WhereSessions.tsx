@@ -1,4 +1,6 @@
 import { Card, H2, Lead, Row, Section, ImageFrame, Muted } from "./_ui";
+import equipment from "../assets/equipment.jpg";
+import reformer from "../assets/reformer.jpg";
 
 export default function WhereSessions() {
   const img1 = "https://picsum.photos/seed/pilates-home/1200/800";
@@ -14,10 +16,10 @@ export default function WhereSessions() {
 
       <Row gap={18}>
         <div style={{ flex: "1 1 420px", minWidth: 280 }}>
-          <ImageFrame src={img1} alt="At-home Pilates session" />
+          <ImageFrame src={equipment} alt="At-home Pilates session" />
         </div>
         <div style={{ flex: "1 1 420px", minWidth: 280 }}>
-          <ImageFrame src={img2} alt="Reformer Pilates session" />
+          <ImageFrame src={reformer} alt="Reformer Pilates session" />
         </div>
       </Row>
 

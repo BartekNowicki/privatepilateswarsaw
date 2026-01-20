@@ -5,7 +5,7 @@ export default function AboutMe() {
     <Section tone="light">
       <H2>About me</H2>
       <Lead>
-        I’m a Pilates instructor focused on quality of movement, biomechanics, and a practical approach that improves how you
+        I’m a certified Pilates instructor focused on quality of movement, biomechanics, and a practical approach that improves how you
         feel in everyday life — not just how you perform in a session.
       </Lead>
 
@@ -19,7 +19,7 @@ export default function AboutMe() {
         </Card>
 
         <Card title="Expat-friendly communication" icon="🇺🇸">
-          English-first sessions, easy scheduling, and a professional, friendly tone — like a high-quality private service in the US.
+          English-first sessions, smooth scheduling, and a high standard of personal, one-to-one care.
         </Card>
       </Row>
 
