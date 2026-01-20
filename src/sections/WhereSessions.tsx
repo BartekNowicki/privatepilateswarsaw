@@ -3,8 +3,6 @@ import equipment from "../assets/equipment.jpg";
 import reformer from "../assets/reformer.jpg";
 
 export default function WhereSessions() {
-  const img1 = "https://picsum.photos/seed/pilates-home/1200/800";
-  const img2 = "https://picsum.photos/seed/pilates-reformer/1200/800";
 
   return (
     <Section tone="light">
