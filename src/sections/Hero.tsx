@@ -1,45 +1,74 @@
+import { ButtonLink, Container, DividerLabel, ImageFrame, Row } from "./_ui";
+
 export default function Hero() {
+  const heroImg = "https://picsum.photos/seed/pilates-hero/1400/900";
+
   return (
-    <section style={{ padding: "72px 20px", maxWidth: 980, margin: "0 auto" }}>
-      <p style={{ margin: 0, opacity: 0.8 }}>Pilates 1:1 • Warszawa • dojazd + reformer (Wilcza)</p>
+    <section
+      style={{
+        padding: "86px 0 72px",
+        background:
+          "radial-gradient(900px 500px at 10% 10%, rgba(0,0,0,0.06), transparent 60%), radial-gradient(900px 500px at 80% 20%, rgba(0,0,0,0.05), transparent 60%)",
+      }}
+    >
+      <Container>
+        <Row gap={28}>
+          <div style={{ flex: "1 1 520px", minWidth: 280 }}>
+            <DividerLabel text="Private 1:1 Pilates • Warsaw • I come to you (home or office)" />
+            <h1
+              style={{
+                fontSize: 46,
+                lineHeight: 1.08,
+                margin: "16px 0 12px",
+                letterSpacing: -0.6,
+              }}
+            >
+              Feel better in your body —
+              without rearranging your life.
+            </h1>
 
-      <h1 style={{ fontSize: 44, lineHeight: 1.1, margin: "16px 0" }}>
-        Indywidualne sesje Pilates, które realnie poprawiają komfort ciała
-      </h1>
+            <p style={{ fontSize: 18, lineHeight: 1.7, maxWidth: 720, margin: "0 0 18px" }}>
+              I offer private, personalized Pilates sessions in Warsaw — at your home or office.
+              If you prefer equipment-based training, we can also work on a reformer in a fully equipped
+              studio downtown.
+            </p>
 
-      <p style={{ fontSize: 18, lineHeight: 1.6, maxWidth: 720 }}>
-        Współczesne podejście ukierunkowane na przeciwdziałanie skutkom siedzenia, stresu i przeciążeń.
-        Pracujemy spokojnie, bezpiecznie i z jasnym planem progresji — w domu klienta lub na reformerze.
-      </p>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 18 }}>
+              <ButtonLink href="#contact" variant="primary">
+                Book a first session
+              </ButtonLink>
+              <ButtonLink href="#first-session" variant="ghost">
+                What the first session looks like
+              </ButtonLink>
+            </div>
 
-      <div style={{ display: "flex", gap: 12, marginTop: 20, flexWrap: "wrap" }}>
-        <a
-          href="#kontakt"
-          style={{
-            display: "inline-block",
-            padding: "12px 16px",
-            borderRadius: 10,
-            textDecoration: "none",
-            border: "1px solid currentColor",
-          }}
-        >
-          Umów pierwszą sesję
-        </a>
+            <div style={{ marginTop: 18, opacity: 0.85, lineHeight: 1.65 }}>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                <span>✅ Gentle, progressive approach</span>
+                <span>✅ Clear plan (not random workouts)</span>
+                <span>✅ Great for desk tension & stiffness</span>
+                <span>✅ English-first, expat-friendly</span>
+              </div>
+            </div>
 
-        <a
-          href="#pierwsza-sesja"
-          style={{
-            display: "inline-block",
-            padding: "12px 16px",
-            borderRadius: 10,
-            textDecoration: "none",
-            border: "1px solid rgba(0,0,0,0.2)",
-            opacity: 0.9,
-          }}
-        >
-          Zobacz jak wygląda start
-        </a>
-      </div>
+            <div style={{ marginTop: 22, fontSize: 13, opacity: 0.75 }}>
+              Popular with: busy professionals • expats • people who want consistent progress
+            </div>
+          </div>
+
+          <div style={{ flex: "1 1 420px", minWidth: 280 }}>
+            <ImageFrame
+              src={heroImg}
+              alt="Private Pilates session in a clean, modern setting"
+            />
+            <div style={{ marginTop: 10, display: "flex", gap: 10, flexWrap: "wrap" }}>
+              <DividerLabel text="Home sessions" />
+              <DividerLabel text="Office sessions" />
+              <DividerLabel text="Reformer downtown" />
+            </div>
+          </div>
+        </Row>
+      </Container>
     </section>
   );
 }
