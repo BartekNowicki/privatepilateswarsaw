@@ -5,8 +5,10 @@ const colors = {
   burgundySoft: "rgba(122,31,43,0.08)",
   burgundyBorder: "rgba(122,31,43,0.22)",
   burgundyTextSoft: "rgba(122,31,43,0.85)",
-  burgundyHeader: "rgba(122, 31, 43, 1)",
+  burgundyHeader: "rgba(122, 31, 43, 0.45)",
+
   cardBg: "rgba(122,31,43,0.02)",
+
   ink: "#111",
   softBackground: `linear-gradient(
     180deg,
