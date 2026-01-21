@@ -53,7 +53,7 @@ export default function CTA() {
           </ul>
 
           <div style={{ marginTop: 14 }}>
-            <ButtonLink href="#first-session" variant="ghost">
+            <ButtonLink href="#first-session" variant="accent">
               See how the first session works
             </ButtonLink>
           </div>

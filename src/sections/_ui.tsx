@@ -3,10 +3,11 @@ const colors = {
   burgundySoft: "rgba(122,31,43,0.08)",
   burgundyBorder: "rgba(122,31,43,0.22)",
   burgundyTextSoft: "rgba(122,31,43,0.85)",
-  burgundyHeader: "rgba(122, 31, 43, 0.45)",
-
+  burgundyHeader: "rgba(168, 70, 86, 0.92)",
+  ctaGreen: "rgba(64, 145, 108, 0.95)",
+  ctaGreenBg: "rgba(64, 145, 108, 0.12)",
+  ctaGreenBorder: "rgba(64, 145, 108, 0.45)",
   cardBg: "rgba(122,31,43,0.02)",
-
   ink: "#111",
   softBackground: `linear-gradient(
     180deg,
@@ -154,9 +155,26 @@ export function ButtonLink({
 }: {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "ghost";
+  variant?: "primary" | "ghost" | "accent";
 }) {
-  const isPrimary = variant === "primary";
+  const styles =
+    variant === "primary"
+      ? {
+          border: `1px solid ${colors.burgundy}`,
+          background: colors.burgundy,
+          color: "white",
+        }
+      : variant === "accent"
+      ? {
+          border: `1px solid ${colors.ctaGreenBorder}`,
+          background: colors.ctaGreenBg,
+          color: colors.ctaGreen,
+        }
+      : {
+          border: `1px solid ${colors.burgundyBorder}`,
+          background: "transparent",
+          color: colors.burgundy,
+        };
 
   return (
     <a
@@ -166,18 +184,15 @@ export function ButtonLink({
         padding: "12px 18px",
         borderRadius: 12,
         textDecoration: "none",
-        border: isPrimary
-          ? `1px solid ${colors.burgundy}`
-          : `1px solid ${colors.burgundyBorder}`,
-        background: isPrimary ? colors.burgundy : "transparent",
-        color: isPrimary ? "white" : colors.burgundy,
         fontWeight: 650,
+        ...styles,
       }}
     >
       {children}
     </a>
   );
 }
+
 
 export function ImageFrame({ src, alt }: { src: string; alt: string }) {
   return (

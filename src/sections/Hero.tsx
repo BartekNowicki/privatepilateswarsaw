@@ -37,7 +37,7 @@ export default function Hero() {
               <ButtonLink href="#contact" variant="primary">
                 Book a first session
               </ButtonLink>
-              <ButtonLink href="#first-session" variant="ghost">
+              <ButtonLink href="#first-session" variant="accent">
                 What the first session looks like
               </ButtonLink>
             </div>
