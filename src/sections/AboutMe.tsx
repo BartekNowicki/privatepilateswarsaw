@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { H2, Lead, Section, Row, Card, Muted, ImageFrame } from "./_ui";
 import { Lightbox } from "../components/Lightbox";
 

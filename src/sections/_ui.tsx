@@ -1,5 +1,3 @@
-import React from "react";
-
 const colors = {
   burgundy: "rgba(122, 31, 43, 1)",
   burgundySoft: "rgba(122,31,43,0.08)",
